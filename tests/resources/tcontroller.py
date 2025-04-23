@@ -8,6 +8,7 @@ from brainvision_recording.utils.logging import logger
 class DummyManager(BrainvisionManager):
 
     def _run_vbs_cmd(self, script_name: str, params: None | list = []) -> Path:
+        """Overwrite this just to test if the correct file would be triggered"""
         script_path = self.vbs_root_path.joinpath(script_name)
         logger.debug(f"vbs script called at: {script_path}")
         return script_path
